@@ -1,12 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:music_dev_app/common/widgets/button/basic_app_button.dart';
 import 'package:music_dev_app/common/widgets/chooseMode/basic_choose_mode.dart';
 import 'package:music_dev_app/core/configs/assets/app_images.dart';
 import 'package:music_dev_app/core/configs/assets/app_vectors.dart';
 import 'package:music_dev_app/core/configs/theme/app_colors.dart';
+import 'package:music_dev_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -21,7 +23,7 @@ return Scaffold(
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(AppImages.introBg),
+                image: AssetImage(AppImages.chooseModeBg),
               ),
             ),
           ),
@@ -56,17 +58,22 @@ return Scaffold(
                   children: [
                     Column(
                       children: [
-                        BasicCirCleChooseMode(
-                          color: AppColors.greyChooseMode.withValues(alpha: 0.5),
-                          opacity: 0.5,
-                          size: 80,
-                          child: SvgPicture.asset(
-                            AppVectors.lighMode,
-                            fit: BoxFit.none,
+                        GestureDetector(
+                          onTap: () {
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                          },
+                          child: BasicCirCleChooseMode(
+                            color: AppColors.greyChooseMode.withValues(alpha: 0.5),
+                            opacity: 0.5,
+                            size: 80,
+                            child: SvgPicture.asset(
+                              AppVectors.lighMode,
+                              fit: BoxFit.none,
+                            ),
                           ),
                         ),
                       const SizedBox(height: 20),
-                      Text(
+                      const Text(
                         'Light Mode',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
@@ -76,20 +83,25 @@ return Scaffold(
                       )
                       ],
                     ),
-                    SizedBox(width: 80),
+                    const SizedBox(width: 80),
                   Column(
                     children: [
-                      BasicCirCleChooseMode(
-                          color: AppColors.greyChooseMode.withValues(alpha: 0.5),
-                          opacity: 0.5,
-                          size: 80,
-                          child: SvgPicture.asset(
-                            AppVectors.darkMode,
-                            fit: BoxFit.none,
+                      GestureDetector(
+                          onTap: () {
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                          },
+                        child: BasicCirCleChooseMode(
+                            color: AppColors.greyChooseMode.withValues(alpha: 0.5),
+                            opacity: 0.5,
+                            size: 80,
+                            child: SvgPicture.asset(
+                              AppVectors.darkMode,
+                              fit: BoxFit.none,
+                            ),
                           ),
-                        ),
+                      ),
                         const SizedBox(height: 20),
-                      Text(
+                      const Text(
                         'Dark Mode',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
