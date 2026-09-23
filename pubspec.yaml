@@ -11,6 +11,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: 
 
+  flutter_bloc: 
+  hydrated_bloc: 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

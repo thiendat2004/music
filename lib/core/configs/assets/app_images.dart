@@ -1,8 +1,7 @@
 class AppImages {
+  static const String basePath = 'assets/images/';
 
- static const String basePath = 'assets/images/';
-
- static const String introBg = '${basePath}intro_bg.jpg';
- static const String chooseModeBg = '${basePath}choose_mode.jpg';
-
+  static const String introBg = '${basePath}intro_bg.jpg';
+  static const String chooseModeBg = '${basePath}choose_mode.jpg';
+  static const String overView = '${basePath}HVL_overview.jpg';
 }
