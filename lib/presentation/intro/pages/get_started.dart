@@ -42,7 +42,7 @@ class GetStartedPage extends StatelessWidget {
                 const Text(
                   'NGHIÊM VŨ HOÀNG LONG',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                     color: Colors.white,
                     fontSize: 18,
                   ),

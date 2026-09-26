@@ -8,6 +8,7 @@ import 'package:music_dev_app/common/widgets/chooseMode/basic_choose_mode.dart';
 import 'package:music_dev_app/core/configs/assets/app_images.dart';
 import 'package:music_dev_app/core/configs/assets/app_vectors.dart';
 import 'package:music_dev_app/core/configs/theme/app_colors.dart';
+import 'package:music_dev_app/presentation/auth/pages/signup_signin.dart';
 import 'package:music_dev_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -118,7 +119,7 @@ return Scaffold(
                   onPressed: () {
                     Navigator.push(
                       context, 
-                      MaterialPageRoute(builder: (BuildContext context) => const ChooseModePage()
+                      MaterialPageRoute(builder: (BuildContext context) => const SignupSigninPage()
                       )
                     );
                   }, 
